@@ -2,16 +2,17 @@ const clicker = document.getElementById("Clicker");
 const points = document.getElementById("Points");
 
 let game;
+game = new Point();
+
 
 function updateCount()
 {
-game.number++;
-points.innerHTML = "Balance: " + game.number;
+    points.innerHTML = game.log;
 }
-
-
 
 clicker.addEventListener("click", function (event) 
 {
-updateCount();
+    event.preventDefault();
+    game.play();
+    updateCount();
 });
